@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import InputForm from './components/InputForm';
+import PersonList from './components/PersonList';
 
 function App() {
+
+  const [people, setPeople] = useState([
+    { name: 'Spencer', age: '50', id: 's1'},
+    { name: 'Jane', age: '62', id: 'j1'}
+  ]);
+
+  const onAddPerson = (enteredName, enteredAge) => {
+    console.log('here: ', enteredName, enteredAge);
+    setPeople(prevPeople => {
+      let updatedPeople = [...prevPeople];
+      updatedPeople.push({name: enteredName, 
+                          age: enteredAge,
+                          id: Math.random().toString()  });
+      return updatedPeople;
+    })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InputForm onAddPerson={onAddPerson} />
+      <PersonList items={people} />
     </div>
   );
 }
