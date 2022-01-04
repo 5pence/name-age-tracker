@@ -11,18 +11,15 @@ function App() {
   ]);
 
   const onAddPerson = (enteredName, enteredAge) => {
-    console.log('here: ', enteredName, enteredAge);
-    setPeople(prevPeople => {
-      let updatedPeople = [...prevPeople];
-      updatedPeople.push({name: enteredName, 
-                          age: enteredAge,
-                          id: Math.random().toString()  });
-      return updatedPeople;
-    })
-  }
+    const data = {name: enteredName, 
+      age: enteredAge,
+      id: Math.random().toString() 
+     }
+    setPeople(prevPeople => [...prevPeople, data])
+    }
 
   return (
-    <div className="App">
+    <div className="app">
       <InputForm onAddPerson={onAddPerson} />
       <PersonList items={people} />
     </div>

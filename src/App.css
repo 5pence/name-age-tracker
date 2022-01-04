@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+}
+
+form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+label, input {
+  display: inline-block;
+}
+
+label {
+  width: 33%;
+  text-align: right;
+}
+
+label+input {
+  width: 30%;
+  margin: 0 30% 0 4%;
+}
+
+.submitter {
+  font-size: 1rem;
+  margin: .4rem 0 .4rem 20%;
+  padding: .2rem;
+  background-color: #56876d;
+  color: #fbfff1;
+  border-radius: .3rem;
+} 
+
+.app {
+  
+  width: 66%;
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.former {
+  padding: 1rem;
+}
+
+.inputter {
+  border: 1px solid #240B36;
+  background-color: #b4c5e4;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+}
+
+.lister {
+  margin-top: 1rem;
+  border: 1px solid #240B36;
+  background-color: #b4c5e4;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+}
+
+.lister ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+.lister ul li {
+  margin: .5rem;
+}
